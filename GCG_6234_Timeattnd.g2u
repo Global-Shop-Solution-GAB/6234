@@ -1,0 +1,643 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.FrmClockLog..Create(BaseForm)
+Gui.FrmClockLog..Caption("Confirm Time for Day")
+Gui.FrmClockLog..Size(595,339)
+Gui.FrmClockLog..MinX(0)
+Gui.FrmClockLog..MinY(0)
+Gui.FrmClockLog..Position(0,0)
+Gui.FrmClockLog..AlwaysOnTop(False)
+Gui.FrmClockLog..FontName("Tahoma")
+Gui.FrmClockLog..FontSize(8.25)
+Gui.FrmClockLog..ControlBox(True)
+Gui.FrmClockLog..MaxButton(False)
+Gui.FrmClockLog..MinButton(True)
+Gui.FrmClockLog..MousePointer(0)
+Gui.FrmClockLog..Moveable(True)
+Gui.FrmClockLog..Sizeable(True)
+Gui.FrmClockLog..ShowInTaskBar(True)
+Gui.FrmClockLog..TitleBar(True)
+Gui.FrmClockLog..Event(UnLoad,FrmClockLog_UnLoad)
+Gui.FrmClockLog.GsGcTimeRecs.Create(GsGridControl)
+Gui.FrmClockLog.GsGcTimeRecs.Enabled(True)
+Gui.FrmClockLog.GsGcTimeRecs.Visible(True)
+Gui.FrmClockLog.GsGcTimeRecs.Zorder(0)
+Gui.FrmClockLog.GsGcTimeRecs.Size(568,109)
+Gui.FrmClockLog.GsGcTimeRecs.Position(18,96)
+Gui.FrmClockLog.cmdSave.Create(Button)
+Gui.FrmClockLog.cmdSave.Enabled(True)
+Gui.FrmClockLog.cmdSave.Visible(True)
+Gui.FrmClockLog.cmdSave.Zorder(0)
+Gui.FrmClockLog.cmdSave.Size(97,23)
+Gui.FrmClockLog.cmdSave.Position(459,274)
+Gui.FrmClockLog.cmdSave.Caption("Save")
+Gui.FrmClockLog.cmdSave.FontName("Tahoma")
+Gui.FrmClockLog.cmdSave.FontSize(8.25)
+Gui.FrmClockLog.cmdSave.Event(Click,cmdSave_Click)
+Gui.FrmClockLog.txtdisclaimer.Create(TextboxM)
+Gui.FrmClockLog.txtdisclaimer.Enabled(True)
+Gui.FrmClockLog.txtdisclaimer.Visible(True)
+Gui.FrmClockLog.txtdisclaimer.Zorder(0)
+Gui.FrmClockLog.txtdisclaimer.Size(568,54)
+Gui.FrmClockLog.txtdisclaimer.Position(15,29)
+Gui.FrmClockLog.txtdisclaimer.FontName("Tahoma")
+Gui.FrmClockLog.txtdisclaimer.FontSize(8.25)
+Gui.FrmClockLog.txtdisclaimer.Locked(True)
+Gui.FrmClockLog.txtdisclaimer.Text("Here is where you will have th disclaimer about confirming time and the timestamps for current day will be listed below. ")
+Gui.FrmClockLog.lblEmpName.Create(Label,"Employee Name Here",True,131,17,0,22,6,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmClockLog.lblEmpName.BorderStyle(0)
+Gui.FrmClockLog.txtcoments.Create(TextboxM)
+Gui.FrmClockLog.txtcoments.Enabled(True)
+Gui.FrmClockLog.txtcoments.Visible(False)
+Gui.FrmClockLog.txtcoments.Zorder(0)
+Gui.FrmClockLog.txtcoments.Size(433,79)
+Gui.FrmClockLog.txtcoments.Position(14,218)
+Gui.FrmClockLog.txtcoments.FontName("Tahoma")
+Gui.FrmClockLog.txtcoments.FontSize(8.25)
+Gui.FrmClockLog.txtcoments.MaxLength(200)
+Gui.FrmClockLog.chktimeconfirm.Create(CheckBox)
+Gui.FrmClockLog.chktimeconfirm.Enabled(True)
+Gui.FrmClockLog.chktimeconfirm.Visible(True)
+Gui.FrmClockLog.chktimeconfirm.Zorder(0)
+Gui.FrmClockLog.chktimeconfirm.Size(105,24)
+Gui.FrmClockLog.chktimeconfirm.Position(456,219)
+Gui.FrmClockLog.chktimeconfirm.Caption("Time Confirmed")
+Gui.FrmClockLog.chktimeconfirm.FontName("Tahoma")
+Gui.FrmClockLog.chktimeconfirm.FontSize(8.25)
+Gui.FrmClockLog.chktimeconfirm.Event(Click,chktimeconfirm_Click)
+Gui.FrmClockLog.txtInitial.Create(TextBox,"",True,32,24,0,457,247,True,0,"Tahoma",8.25,,1)
+Gui.FrmClockLog.txtInitial.MaxLength(5)
+Gui.FrmClockLog.lbl2.Create(Label,"Employee Initials",True,80,13,0,495,251,True,0,"Tahoma",8.25,,0,0)
+Gui.FrmClockLog.lbl2.BorderStyle(0)
+Gui.frmTimeattendDash..Create(BaseForm)
+Gui.frmTimeattendDash..Caption("Time and Attendance Employee Confirmation")
+Gui.frmTimeattendDash..Size(1024,769)
+Gui.frmTimeattendDash..MinX(0)
+Gui.frmTimeattendDash..MinY(0)
+Gui.frmTimeattendDash..Position(0,0)
+Gui.frmTimeattendDash..AlwaysOnTop(False)
+Gui.frmTimeattendDash..FontName("Tahoma")
+Gui.frmTimeattendDash..FontSize(8.25)
+Gui.frmTimeattendDash..ControlBox(True)
+Gui.frmTimeattendDash..MaxButton(False)
+Gui.frmTimeattendDash..MinButton(True)
+Gui.frmTimeattendDash..MousePointer(0)
+Gui.frmTimeattendDash..Moveable(True)
+Gui.frmTimeattendDash..Sizeable(True)
+Gui.frmTimeattendDash..ShowInTaskBar(True)
+Gui.frmTimeattendDash..TitleBar(True)
+Gui.frmTimeattendDash..Event(UnLoad,frmTimeattendDash_UnLoad)
+Gui.frmTimeattendDash.GsGcRecs.Create(GsGridControl)
+Gui.frmTimeattendDash.GsGcRecs.Enabled(True)
+Gui.frmTimeattendDash.GsGcRecs.Visible(True)
+Gui.frmTimeattendDash.GsGcRecs.Zorder(0)
+Gui.frmTimeattendDash.GsGcRecs.Size(992,645)
+Gui.frmTimeattendDash.GsGcRecs.Position(15,72)
+Gui.frmTimeattendDash.GsGcRecs.FlowBreak(True)
+Gui.frmTimeattendDash.dtpfrom.Create(DatePicker)
+Gui.frmTimeattendDash.dtpfrom.Enabled(True)
+Gui.frmTimeattendDash.dtpfrom.Visible(True)
+Gui.frmTimeattendDash.dtpfrom.Zorder(0)
+Gui.frmTimeattendDash.dtpfrom.Size(100,20)
+Gui.frmTimeattendDash.dtpfrom.Position(14,38)
+Gui.frmTimeattendDash.dtpfrom.CheckBox(False)
+Gui.frmTimeattendDash.dtpfrom.FontName("Tahoma")
+Gui.frmTimeattendDash.dtpfrom.FontSize(8.25)
+Gui.frmTimeattendDash.dtpTo.Create(DatePicker)
+Gui.frmTimeattendDash.dtpTo.Enabled(True)
+Gui.frmTimeattendDash.dtpTo.Visible(True)
+Gui.frmTimeattendDash.dtpTo.Zorder(0)
+Gui.frmTimeattendDash.dtpTo.Size(100,20)
+Gui.frmTimeattendDash.dtpTo.Position(128,38)
+Gui.frmTimeattendDash.dtpTo.CheckBox(False)
+Gui.frmTimeattendDash.dtpTo.FontName("Tahoma")
+Gui.frmTimeattendDash.dtpTo.FontSize(8.25)
+Gui.frmTimeattendDash.cmdRefresh.Create(Button)
+Gui.frmTimeattendDash.cmdRefresh.Enabled(True)
+Gui.frmTimeattendDash.cmdRefresh.Visible(True)
+Gui.frmTimeattendDash.cmdRefresh.Zorder(0)
+Gui.frmTimeattendDash.cmdRefresh.Size(75,23)
+Gui.frmTimeattendDash.cmdRefresh.Position(248,36)
+Gui.frmTimeattendDash.cmdRefresh.Caption("Refresh")
+Gui.frmTimeattendDash.cmdRefresh.FontName("Tahoma")
+Gui.frmTimeattendDash.cmdRefresh.FontSize(8.25)
+Gui.frmTimeattendDash.cmdRefresh.Event(Click,Show_TimeAttendDash)
+Gui.frmTimeattendDash.lbl1.Create(Label,"Start",True,24,13,0,15,17,True,0,"Tahoma",8.25,,0,0)
+Gui.frmTimeattendDash.lbl1.BorderStyle(0)
+Gui.frmTimeattendDash.lbl2.Create(Label,"End",True,18,13,0,130,16,True,0,"Tahoma",8.25,,0,0)
+Gui.frmTimeattendDash.lbl2.BorderStyle(0)
+Gui.frmconfirm..Create(BaseForm)
+Gui.frmconfirm..Caption("Confirm")
+Gui.frmconfirm..Size(395,139)
+Gui.frmconfirm..MinX(0)
+Gui.frmconfirm..MinY(0)
+Gui.frmconfirm..Position(0,0)
+Gui.frmconfirm..AlwaysOnTop(False)
+Gui.frmconfirm..FontName("Tahoma")
+Gui.frmconfirm..FontSize(8.25)
+Gui.frmconfirm..ControlBox(True)
+Gui.frmconfirm..MaxButton(False)
+Gui.frmconfirm..MinButton(False)
+Gui.frmconfirm..MousePointer(0)
+Gui.frmconfirm..Moveable(True)
+Gui.frmconfirm..Sizeable(False)
+Gui.frmconfirm..ShowInTaskBar(True)
+Gui.frmconfirm..TitleBar(True)
+Gui.frmconfirm..Event(UnLoad,frmconfirm_UnLoad)
+Gui.frmconfirm.cmdMeal.Create(Button)
+Gui.frmconfirm.cmdMeal.Enabled(True)
+Gui.frmconfirm.cmdMeal.Visible(True)
+Gui.frmconfirm.cmdMeal.Zorder(0)
+Gui.frmconfirm.cmdMeal.Size(94,29)
+Gui.frmconfirm.cmdMeal.Position(32,27)
+Gui.frmconfirm.cmdMeal.Caption("Meal Period")
+Gui.frmconfirm.cmdMeal.FontName("Tahoma")
+Gui.frmconfirm.cmdMeal.FontSize(7.8)
+Gui.frmconfirm.cmdMeal.Event(Click,cmdMeal_Click)
+Gui.frmconfirm.cmdLeave.Create(Button)
+Gui.frmconfirm.cmdLeave.Enabled(True)
+Gui.frmconfirm.cmdLeave.Visible(True)
+Gui.frmconfirm.cmdLeave.Zorder(0)
+Gui.frmconfirm.cmdLeave.Size(94,29)
+Gui.frmconfirm.cmdLeave.Position(148,28)
+Gui.frmconfirm.cmdLeave.Caption("Leave for Day")
+Gui.frmconfirm.cmdLeave.FontName("Tahoma")
+Gui.frmconfirm.cmdLeave.FontSize(7.8)
+Gui.frmconfirm.cmdLeave.Event(Click,cmdLeave_Click)
+Gui.frmconfirm.cmdCancel.Create(Button)
+Gui.frmconfirm.cmdCancel.Enabled(True)
+Gui.frmconfirm.cmdCancel.Visible(True)
+Gui.frmconfirm.cmdCancel.Zorder(0)
+Gui.frmconfirm.cmdCancel.Size(94,29)
+Gui.frmconfirm.cmdCancel.Position(261,29)
+Gui.frmconfirm.cmdCancel.Caption("Clock-IN")
+Gui.frmconfirm.cmdCancel.FontName("Tahoma")
+Gui.frmconfirm.cmdCancel.FontSize(7.8)
+Gui.frmconfirm.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.frmconfirm.lblemployee.Create(Label,"Label",True,30,16,0,32,6,True,0,"Tahoma",7.8,,0,0)
+Gui.frmconfirm.lblemployee.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+f.Intrinsic.Control.Try
+'*******************************************
+'Developer : RANJJIT NAIR
+'Customer :  SOUTHCOAST WELDING & MFG
+'CUSTOM TIME CONFIRMATION
+
+'%$00009
+
+
+
+variable.local.returnvalue.Declare(String)
+v.Local.sSql.Declare
+v.Local.ltmdiff.Declare
+v.Local.dTime.Declare
+v.Global.sStatus.Declare
+V.Local.sEmployee.Declare
+
+f.Intrinsic.Control.If(v.Caller.Switches,=,"D")
+'Open Dashboard
+	f.ODBC.Connection!con.opencompanyconnection
+	F.Intrinsic.Control.CallSub(SetContextMenus)
+
+	f.Intrinsic.Control.CallSub(Check_Table)
+	gui.frmTimeattendDash..Show
+'f.Intrinsic.Control.elseIf(v.Caller.Hook,=,15755,"OR",v.Caller.Hook,=,15752,v.Caller.Hook,=,15922)
+
+f.Intrinsic.Control.elseIf(v.Caller.Hook,=,50722)
+
+'f.Intrinsic.Control.elseIf(v.Caller.Hook,=,15753,"OR",v.Caller.Hook,=,15752)
+'15753 employee prescan
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+'15755 -post scan
+'15752 -custom scan
+
+'%$00006  scan in
+'%$00003 
+
+'	f.Intrinsic.Control.If(v.Caller.Hook,=,15752)
+'		'Clockout
+'		V.Passed.STATUS.Set("CLOCK OUT")
+'		'%/00006   scan out    
+''		%/00003 
+'	f.Intrinsic.Control.EndIf
+
+'SCAN Clockin/Out
+	f.Intrinsic.Control.If(v.Passed.009000.Long,=,0)
+	'not job scan
+		f.ODBC.Connection!con.opencompanyconnection
+		
+'		V.Local.sEmployee.Set(v.Passed.009993.Trim)
+		V.Local.sEmployee.Set(Variable.Passed.Clocking_Out_Employee.Trim)
+		
+		
+		f.Intrinsic.String.Build("select  Name,date_out,time_in,Hours_HH from v_TIME_ATTENDANCE where  employee = '{0}' and date_in = '{1}' order by Time_in desc",V.Local.sEmployee,v.Ambient.Date.PervasiveDate,v.Local.sSql)
+		f.Data.Datatable.CreateFromSQL("DTTime","con",v.Local.sSql)
+			f.Intrinsic.Control.If(v.DataTable.DTTime.RowCount,>,0)
+'			f.Intrinsic.Date.DateDiff("N",V.DataTable.DTTime(0).time_in!FieldVal,V.Ambient.Time,v.Local.ltmdiff)
+'			v.Local.dTime.Set(V.DataTable.DTTime(0).time_in!FieldVal)
+'			f.Intrinsic.Date.DateDiff("N",v.Local.dTime,v.Ambient.now,v.Local.ltmdiff)
+'				f.Intrinsic.Control.If(V.DataTable.DTTime(0).date_out!FieldVal,<>,"1/1/1900")
+'				f.Intrinsic.Control.If(v.Caller.Hook,=,15752)
+				
+									
+
+					gui.frmconfirm..Show
+					
+					gui.frmconfirm.lblemployee.Caption(V.DataTable.DTTime(0).Name!FieldVal)
+					gui.frmconfirm..WaitForDismiss
+					
+					f.Intrinsic.Control.If(v.Global.sStatus,=,"L")
+						gui.FrmClockLog.lblEmpName.Caption(V.DataTable.DTTime(0).Name!FieldVal)
+						f.Intrinsic.Control.CallSub(Show_Screen)
+							f.Intrinsic.Control.ExitSub
+					f.Intrinsic.Control.EndIf
+					
+				
+					
+'					'not clockin
+''					if currenttime - (V.DataTable.DTTime(0).dateout!FieldVal > 4 hrs
+''					f.Intrinsic.Date.DateDiff("D",v.Ambient.Time,V.DataTable.DTTime(0).time_in!FieldVal,v.Local.lRet)
+''					f.Intrinsic.Control.If(V.DataTable.DTTime(0).Hours_HH!FieldVal,>,4)
+'						Function.Intrinsic.UI.MsgBox("Leaving for the day?","Confirm", 4,variable.local.returnvalue)
+'						F.Intrinsic.Control.If(variable.local.returnvalue,=,6)
+'							f.Intrinsic.Control.CallSub(Show_Screen)
+'							f.Intrinsic.Control.ExitSub
+'						F.Intrinsic.Control.EndIf
+''					f.Intrinsic.Control.Else
+'''						f.Intrinsic.Control.If(v.DataTable.DTTime.RowCount,>,1)
+''							Function.Intrinsic.UI.MsgBox("Leaving for the day?","Confirm", 4,variable.local.returnvalue)
+''							F.Intrinsic.Control.If(variable.local.returnvalue,=,6)
+''								f.Intrinsic.Control.CallSub(Show_Screen)
+''								f.Intrinsic.Control.ExitSub
+'''							F.Intrinsic.Control.EndIf
+''						f.Intrinsic.Control.EndIf
+''					F.Intrinsic.Control.EndIf
+''				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.CallSub(FrmClockLog_UnLoad)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.endif
+
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+Program.Sub.ErrorMsg.Start
+f.Intrinsic.Control.Try
+
+v.Local.sError.Declare
+
+f.Intrinsic.String.Build("Project GCG_6234_Timeattnd.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+
+
+f.Intrinsic.Control.Catch
+f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ErrorMsg.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sSql.Declare
+V.Local.sEmployee.Declare
+
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+'	f.Intrinsic.Control.If(v.Screen.FrmClockLog!txtcoments.Text,=,"")
+'		f.Intrinsic.UI.Msgbox("Please enter comments")
+'		gui.FrmClockLog.txtcoments.SetFocus
+'		f.Intrinsic.Control.ExitSub
+	
+	
+'	
+'	f.Intrinsic.String.Build("select EMPL_INITIALS from EMPLOYEE_MSTR  where Employee = '{0}'",v.Passed.009993,v.Local.Ssql)
+'	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.Ssql)
+'	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+'		gui.FrmClockLog.txtInitial.Text(V.ODBC.con!rst.FieldVal!EMPL_INITIALS)
+'	f.Intrinsic.Control.endif
+'	F.ODBC.con!rst.Close
+	
+	f.Intrinsic.Control.If(v.Screen.FrmClockLog!chktimeconfirm.Value,=,0)
+		f.Intrinsic.UI.Msgbox("Please confirm leaving for the day")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.ElseIf(v.Screen.FrmClockLog!txtInitial.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Please enter Initials")
+		gui.FrmClockLog.txtInitial.setfocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	
+	f.Intrinsic.Control.CallSub(Check_Table)
+	
+	
+'	f.Intrinsic.String.Build("select * from GCG_6234_Timeattnd where Employee = '{0}' and Timeattnd_Date = '{1}'",v.Passed.009993,v.Ambient.Date.PervasiveDate,v.Local.Ssql)
+'	
+'	F.ODBC.Connection!con.OpenLocalRecordsetRW("rst",V.Local.Ssql)
+'	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+'		F.ODBC.con!rst.AddNew
+'		F.ODBC.con!rst.Set!Employee(v.Passed.009993.Trim)
+'		F.ODBC.con!rst.Set!Timeattnd_Date(v.Ambient.Date)
+'	f.Intrinsic.Control.endif
+'	
+'	F.ODBC.con!rst.Set!comments(v.Screen.FrmClockLog!txtcoments.Text)
+'	F.ODBC.con!rst.Set!Initial(v.Screen.FrmClockLog!txtInitial.text)
+'	
+'	F.ODBC.con!rst.Update
+''	F.ODBC.con!rst.Close
+'	Function.Intrinsic.Debug.InvokeDebugger
+'	Function.Intrinsic.Debug.Stop
+
+
+
+''	f.Intrinsic.Control.If(v.Caller.Hook,<>,"15922")
+'	f.Intrinsic.Control.If(v.Caller.Hook,<>,"50722")
+'	'clockout
+'		V.Passed.STATUS.Set("CLOCK OUT")
+'	f.Intrinsic.Control.endif
+	Function.Intrinsic.Debug.Stop
+	
+	'V.Local.sEmployee.Set(v.Passed.009993.Trim)
+V.Local.sEmployee.Set(Variable.Passed.Clocking_Out_Employee.Trim)
+
+	f.Intrinsic.String.Build("select CHARGE_DATE,IN_TS_MIN from TIME_ATTENDANCE where Employee = '{0}' and Clocked_IN = 'Y' ",V.Local.sEmployee,v.Local.Ssql)
+	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.Ssql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,false)
+		f.Intrinsic.String.Build("Insert into GCG_6234_Timeattnd(Employee,comments,Initial,IN_TS_MIN,Timeattnd_Date) values ('{0}','{1}','{2}',{3},{4})",V.Local.sEmployee.Trim,v.Screen.FrmClockLog!txtcoments.Text,v.Screen.FrmClockLog!txtInitial.text,V.ODBC.con!rst.FieldVal!IN_TS_MIN,V.ODBC.con!rst.FieldVal!CHARGE_DATE,v.Local.sSql)
+		f.ODBC.Connection!con.Execute(v.local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rst.Close
+
+'	f.Intrinsic.String.Build("Insert into GCG_6234_Timeattnd values ('{0}','{1}','{2}','{3}')",v.Passed.009993.Trim,v.Ambient.now,v.Screen.FrmClockLog!txtcoments.Text,v.Screen.FrmClockLog!txtInitial.text,v.Local.sSql)
+	
+	f.Intrinsic.Control.CallSub(FrmClockLog_UnLoad)
+	
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry		
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.FrmClockLog_UnLoad.Start
+f.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataTable.DTTime.Exists)
+	f.Data.Datatable.Close("DTTime")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.TnARec.Exists)
+	f.Data.Datatable.Close("TnARec")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.ODBC.con.State,=,1)
+	F.ODBC.Connection!con.close
+F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry	
+Program.Sub.FrmClockLog_UnLoad.End
+Program.Sub.Show_Screen.Start
+f.Intrinsic.Control.Try
+
+v.Local.sSql.Declare
+V.Local.bEx.Declare
+V.Local.sFile.Declare
+V.Local.sRet.Declare
+
+v.Local.sdtfrom.Declare
+v.Local.sdtTime.Declare
+
+V.Local.sEmployee.Declare
+
+
+'add disclaimer text here
+F.Intrinsic.String.Build("{0}\Custom\6234\GCG_6234_disclaimer.txt",V.Caller.GlobalDir,V.Local.sFile)
+F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bEx)
+f.Intrinsic.Control.If(V.Local.bEx,=,True)
+	f.Intrinsic.File.File2String(V.Local.sFile,6,V.Local.sRet)
+f.Intrinsic.Control.endif
+
+gui.FrmClockLog.txtdisclaimer.Text(V.Local.sRet)
+
+'V.Local.sEmployee.Set(v.Passed.009993.Trim)
+V.Local.sEmployee.Set(Variable.Passed.Clocking_Out_Employee.Trim)
+	
+f.Intrinsic.String.Build("select  DATE_IN as 'DateIN',time_in as 'TimeIN',date_out as 'DateOut',TIME_OUT as 'TimeOut' from v_TIME_ATTENDANCE where  employee = '{0}' and date_in = '{1}' order by Time_in",V.Local.sEmployee,v.Ambient.Date.PervasiveDate,v.Local.sSql)
+f.Data.Datatable.CreateFromSQL("TnARec","con",v.Local.ssql,true)
+gui.FrmClockLog.GsGcTimeRecs.DataSource("TnARec")
+
+
+F.Intrinsic.String.Format(V.Ambient.Date,"MM/DD/YYYY",v.Local.sdtfrom)
+F.Intrinsic.String.Format(V.Ambient.Time,"HH:NN:SS",v.Local.sdtTime)
+
+f.Data.Datatable.SetValue("TnARec",v.DataTable.TnARec.RowCount--,"DateOut",v.Local.sdtfrom)
+f.Data.Datatable.SetValue("TnARec",v.DataTable.TnARec.RowCount--,"TimeOut",v.Local.sdtTime)
+
+GUI.FrmClockLog.GsGcTimeRecs.SetColumnProperty("TnARec", "DateIN", "DisplayCustomDatetime", "d")
+GUI.FrmClockLog.GsGcTimeRecs.SetColumnProperty("TnARec", "DateOut", "DisplayCustomDatetime", "d")
+
+
+
+gui.FrmClockLog..Show
+
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry	
+Program.Sub.Show_Screen.End
+Program.Sub.Check_Table.Start
+f.Intrinsic.Control.Try
+
+V.Local.bExists.Declare
+V.Local.sSQL.Declare
+
+'F.ODBC.Connection!con.Execute("drop table GCG_6234_Timeattnd")
+F.ODBC.Connection!con.TableExists("GCG_6234_Timeattnd",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	V.Local.sSQL.Set("CREATE TABLE GCG_6234_Timeattnd(Employee VARCHAR(5) NOT NULL,Timeattnd_Date NUMERIC(8,0),comments VARCHAR(200),Initial VARCHAR(5),IN_TS_MIN NUMERIC(12,4)  );")
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	V.Local.sSQL.Set("CREATE UNIQUE INDEX GCG_6234 on GCG_6234_Timeattnd (Employee, Timeattnd_Date,IN_TS_MIN );")
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+	
+Program.Sub.Check_Table.End
+Program.Sub.frmTimeattendDash_UnLoad.Start
+	f.Intrinsic.Control.CallSub(FrmClockLog_UnLoad)
+Program.Sub.frmTimeattendDash_UnLoad.End
+
+Program.Sub.Show_TimeAttendDash.Start
+f.Intrinsic.Control.Try
+
+v.Local.sSql.Declare
+
+v.Local.sdtfrom.Declare
+v.Local.sdtto.Declare
+
+v.Local.ldtfrom.Declare
+v.Local.ldtto.Declare
+
+'Function.Intrinsic.Debug.InvokeDebugger
+'Function.Intrinsic.Debug.Stop
+
+
+v.Local.sdtfrom.Set(v.Screen.frmTimeattendDash!dtpfrom.Value)
+v.Local.sdtto.Set(v.Screen.frmTimeattendDash!dtpto.Value)
+
+v.Local.ldtfrom.Set(v.Local.sdtfrom.formatYYYYMMDD)
+v.Local.ldtto.Set(v.Local.sdtto.formatYYYYMMDD)
+
+F.Intrinsic.Control.If(V.DataTable.TnARec.Exists)
+	f.Data.Datatable.Close("TnARec")
+F.Intrinsic.Control.EndIf
+
+
+'f.Intrinsic.String.Build("select  Name,charge_Date as 'ChargeDate',DATE_IN as 'DateIN',time_in as 'TimeIN',date_out as 'DateOut',TIME_OUT as 'TimeOut',G.Initial,G.comments from v_TIME_ATTENDANCE A join GCG_6234_Timeattnd G on A.employee = G.employee and G.IN_TS_MIN = A.IN_TS_MIN and Timeattnd_Date = charge_Date where charge_Date between '{0}' and '{1}' order by Time_in",v.Local.sdtfrom.PervasiveDate,v.Local.sdtto.PervasiveDate,v.Local.sSql)
+
+'f.Intrinsic.String.Build("select  Name,Employee,Timeattnd_Date,comments,Initiale from v_TIME_ATTENDANCE A join GCG_6234_Timeattnd G on A.employee = G.employee where Timeattnd_Date between '{0}' and '{1}' order by Time_in",v.Local.sdtfrom.PervasiveDate,v.Local.sdtto.PervasiveDate,v.Local.sSql)
+
+
+f.Intrinsic.String.Build("select  Name, Name,substring(charge_Date,1,4) + '-' + substring(charge_Date,5,2) + '-' + substring(charge_Date,7,2) as 'ChargeDate',substring(DATE_IN,1,4) + '-' + substring(DATE_IN,5,2) + '-' + substring(DATE_IN,7,2)  as 'DateIN',substring(Time_IN,1,2) + ':' + substring(Time_IN,3,2) + ':' + substring(Time_IN,5,2)  as 'TimeIN',substring(date_out,1,4) + '-' + substring(date_out,5,2) + '-' + substring(date_out,7,2) as 'DateOut',substring(TIME_OUT,1,2) + ':' + substring(TIME_OUT,3,2) + ':' + substring(TIME_OUT,5,2)  as 'TimeOut',G.Initial,G.comments from TIME_ATTENDANCE A left join GCG_6234_Timeattnd G on A.employee = G.employee and G.IN_TS_MIN = A.IN_TS_MIN and Timeattnd_Date = charge_Date where charge_Date between {0} and {1} order by Time_in",v.Local.ldtfrom,v.Local.ldtto,v.Local.sSql)
+
+f.Data.Datatable.CreateFromSQL("TnARec","con",v.Local.ssql,true)
+
+
+
+gui.frmTimeattendDash.GsGcRecs.DataSource("TnARec")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec","Name","GroupIndex",0)
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "ChargeDate", "DisplayCustomDatetime", "d")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateIN", "DisplayCustomDatetime", "d")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateOut", "DisplayCustomDatetime", "d")
+gui.frmTimeattendDash.GsGcRecs.SetGridviewProperty("TnARec","Editable",false)
+gui.frmTimeattendDash.GsGcRecs.SetGridviewProperty("TnARec","Readonly",true)
+
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "ChargeDate", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "ChargeDate", "Maxwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateIN", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateIN", "Maxwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "TimeIN", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "TimeIN", "Maxwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateOut", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "DateOut", "Maxwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "TimeOut", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "TimeOut", "Maxwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "Initial", "Minwidth","100")
+gui.frmTimeattendDash.GsGcRecs.SetColumnProperty("TnARec", "Initial", "Maxwidth","100")
+
+gui.frmTimeattendDash.GsGcRecs.SetGridViewProperty("TnARec","OptionsViewShowAutoFilterRow",True)
+
+'gui.frmTimeattendDash.GsGcRecs.ExpandMasterRow
+
+f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry	
+Program.Sub.Show_TimeAttendDash.End
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	gui.frmTimeattendDash..ContextMenuCreate("TIMEEXPORT")
+	gui.frmTimeattendDash.GsGcRecs.ContextMenuAttach("TIMEEXPORT")
+	Gui.frmTimeattendDash..ContextMenuAddItem("TIMEEXPORT","Export",0,"Export")
+	Gui.frmTimeattendDash..ContextMenuSetItemEventHandler("TIMEEXPORT","Export","ExportGrids")
+
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.ExportGrids.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bExcel.Declare
+	V.Local.sExt.Declare
+	V.Local.sControl.Declare
+	V.Local.sFileExport.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	
+	
+
+	V.Local.sControl.Set("GsGcRecs")
+	
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		V.Local.sExt.Set("xlsx")
+	F.Intrinsic.Control.Else
+		V.Local.sExt.Set("csv")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\GCG_6234_{1}_Export.{2}",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sExt,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.frmTimeattendDash.[V.Local.sControl].Export(V.Local.sFileExport,V.Local.sExt)
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.ExportGrids.End
+
+Program.Sub.frmconfirm_UnLoad.Start
+	f.Intrinsic.Control.CallSub(FrmClockLog_UnLoad)
+Program.Sub.frmconfirm_UnLoad.End
+
+Program.Sub.cmdCancel_Click.Start
+	f.Intrinsic.Control.CallSub(FrmClockLog_UnLoad)
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.cmdLeave_Click.Start
+	v.Global.sStatus.Set("L")
+	gui.frmconfirm..Visible(false)
+Program.Sub.cmdLeave_Click.End
+
+Program.Sub.cmdMeal_Click.Start
+	gui.FrmClockLog.txtcoments.Text("MEAL PERIOD")
+	gui.FrmClockLog.chktimeconfirm.Value(1)
+	gui.FrmClockLog.txtInitial.Text("M")
+	f.Intrinsic.Control.CallSub(cmdSave_Click)
+Program.Sub.cmdMeal_Click.End
+
+Program.Sub.chktimeconfirm_Click.Start
+v.Local.Ssql.Declare
+V.Local.sEmployee.Declare
+
+
+'V.Local.sEmployee.Set(v.Passed.009993.Trim)
+V.Local.sEmployee.Set(Variable.Passed.Clocking_Out_Employee.Trim)
+
+.String.Build("select EMPL_INITIALS from EMPLOYEE_MSTR  where Employee = '{0}'",V.Local.sEmployee,v.Local.Ssql)
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.Ssql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,false)
+	gui.FrmClockLog.txtInitial.Text(V.ODBC.con!rst.FieldVal!EMPL_INITIALS)
+f.Intrinsic.Control.endif
+F.ODBC.con!rst.Close
+
+Program.Sub.chktimeconfirm_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$rnair$}$20220427142928139$}$JUGEdtlNdgRUPvge2DQ26cJ2Nib0UUk8QZ2fVA9nL6qvycHuZicssdLVP6N9BZtsS8cbI9Gj8oI=
+Program.Sub.Comments.End
